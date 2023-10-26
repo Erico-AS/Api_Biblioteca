@@ -1,0 +1,8 @@
+npm init -y
+npm install typescript@4.9.5 -D
+npm install
+npx tsc --init
+
+npm run <nome do script de acordo com package.json>
+npm run test
+

@@ -1,0 +1,23 @@
+PROMPT 1
+    - mongod --dbpath H:\\mongo-data
+    - CTRL + C x2
+- mongod --dbpath H:\\mongo-data --auth
+
+PROMPT 2
+    - mongo
+    - showdbs
+    - use devweb2
+    - db.createCollection("pessoas") (primeira vez)
+    - show dbs
+    - db.getCollectionNames()
+    - use devweb2
+    - db.createUser({user: "admin", pwd: "admin", roles: [ {role: "readWrite", db: "devweb2"} ] }) (primeira vez se não houver usuário)
+    - db.getUsers()
+    - exit
+- mongo devweb2 -u admin
+- admin
+- db
+
+USUARIO / SENHA
+- admin
+- admin
