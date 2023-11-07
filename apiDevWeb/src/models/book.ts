@@ -1,19 +1,15 @@
-import mongoose, { Schema, Document } from 'mongoose';
-
-export interface IBook extends Document {
+export default class Book {
   titulo: string;
   autor: string;
-  anoPublicacao: number;
+  dataPublicacao: string;
   genero: string;
   paginas: number;
+
+  constructor (titulo: string, autor: string, dataPublicacao: string, genero: string, paginas: number,) {
+    this.titulo = titulo;
+    this.autor = autor;
+    this.dataPublicacao = dataPublicacao;
+    this.genero = genero;
+    this.paginas = paginas
+  }
 }
-
-const BookSchema: Schema = new Schema({
-  titulo: { type: String, required: true },
-  autor: { type: String, required: true },
-  anoPublicacao: { type: Number, required: true },
-  genero: { type: String, required: true },
-  paginas: { type: Number, required: true },
-});
-
-export const Book = mongoose.model<IBook>('Book', BookSchema);
