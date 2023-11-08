@@ -1,6 +1,12 @@
 npm init -y
 npm install typescript@4.9.5 -D
 npm install
+
+npm install cors
+npm install @types/cors -D
+
+npm install mongodb@4.0.0
+
 npx tsc --init
 
 npm run <nome do script de acordo com package.json>
