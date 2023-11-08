@@ -1,6 +1,6 @@
-import mongoose from 'mongoose';
-import bodyParser from 'body-parser';
-import { Book } from './models/book';
+import express, { Request, Response, json } from "express";
+import cors from "cors";
+import routers from "./routers";
 import express, {Response, Request} from 'express' 
 
 const app = express();
