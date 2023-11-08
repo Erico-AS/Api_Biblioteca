@@ -1,9 +1,9 @@
-import express, { Request, Response, json } from "express";
 import cors from "cors";
 import routers from "./routers";
 import express, {Response, Request} from 'express' 
 
 const app = express();
+const port = 3000
 
 app.use(cors());
 app.use(express.json());
