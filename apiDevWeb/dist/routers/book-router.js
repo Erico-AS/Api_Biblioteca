@@ -21,7 +21,7 @@ bookRouter.get("/", (req, res) => __awaiter(void 0, void 0, void 0, function* ()
     const { book } = req.query;
     try {
         if (typeof book !== "string") {
-            throw new Error("O parametro populacao nao foi informado");
+            throw new Error("O parametro 'name' nao foi informado");
         }
     }
     catch (error) {

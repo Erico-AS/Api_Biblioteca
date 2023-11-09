@@ -7,10 +7,9 @@ const bookRouter = express.Router();
 
 bookRouter.get("/", async (req: Request, res: Response) => {
     const { book } = req.query;
-
     try {
         if (typeof book !== "string") {
-            throw new Error("O parametro populacao nao foi informado");
+            throw new Error("O parametro 'name' nao foi informado");
         }
     } catch (error) {
         res.status(400).json({ message: (error as Error).message })

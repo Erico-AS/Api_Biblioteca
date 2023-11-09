@@ -13,3 +13,5 @@ app.use("/book", routers.bookRouter);
 app.listen(port, () => {
     console.log(`Servidor sendo executado na porta ${port}`);
 });
+
+export default app

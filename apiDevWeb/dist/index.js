@@ -14,12 +14,14 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const book_js_1 = __importDefault(require("./models/book.js"));
 const db_1 = __importDefault(require("./db"));
+const server_js_1 = __importDefault(require("./server.js"));
 const booksArray = [
     new book_js_1.default("A Brief History of Time", "Stephen Hawking", "1988-04-01", "Science", 256),
     new book_js_1.default("The Catcher in the Rye", "J.D. Salinger", "1951-07-16", "Fiction", 224),
     new book_js_1.default("1984", "George Orwell", "1949-06-08", "Dystopian", 328),
     new book_js_1.default("The Great Gatsby", "F. Scott Fitzgerald", "1925-04-10", "Classics", 180),
     new book_js_1.default("The Da Vinci Code", "Dan Brown", "2003-03-18", "Mystery", 454),
+    new book_js_1.default("Sherlock", "Sir Arthur Conan Doyle", "1887-03-01", "Mystery", 250)
 ];
 const main = () => __awaiter(void 0, void 0, void 0, function* () {
     let conn = null;
@@ -29,6 +31,7 @@ const main = () => __awaiter(void 0, void 0, void 0, function* () {
         const books = db.collection("books");
         yield books.deleteMany({});
         yield books.insertMany(booksArray);
+        server_js_1.default.listen();
     }
     catch (error) {
         console.log(error);
